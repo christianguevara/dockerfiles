@@ -1,0 +1,18 @@
+--- weatherbit/index.js	2022-09-13 10:54:02.000000000 -0500
++++ weatherbit/index_mod.js	2022-09-13 10:53:00.000000000 -0500
+@@ -1,14 +1,11 @@
+ 'use strict';
+ 
+-const path = require('path');
+ const querystring = require('querystring');
+ 
+-const cfg = require('../cfg');
+ const icons = require('./icons');
+ const request = require('../request');
+ 
+-const config = cfg.read(path.join('REPLACELBPCONFIGDIR', 'data.cfg'));
+-const key = config.data['weatherbit-api-key'];
++const key = process.env.WEATHERBIT_API_KEY;
+ 
+ const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+ 
